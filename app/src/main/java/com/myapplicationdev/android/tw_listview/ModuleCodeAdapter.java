@@ -1,7 +1,9 @@
 package com.myapplicationdev.android.tw_listview;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,7 +15,7 @@ public class ModuleCodeAdapter {
     private TextView tvModuleCode;
     private ImageView ivPicture;
 
-    public ModuleCodeAdapter(Context context, int resource, ArrayList<Food> objects){
+    public ModuleCodeAdapter(Context context, int resource, ArrayList<ModuleCode> objects){
         super(context, resource, objects);
         // Store the food that is passed to this adapter
         modulecode = objects;
@@ -44,7 +46,7 @@ public class ModuleCodeAdapter {
         ModuleCode currentModuleCode = modulecode.get(position);
         // Set the TextView to show the food
 
-        tvModuleCode.setText(currentModuleCode.getName());
+        tvModuleCode.setText(currentModuleCode.getModuleCode());
         // Set the image to star or nostar accordingly
         if(currentModuleCode.isPicture()) {
             ivPicture.setImageResource(R.drawable.star);
